@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 required = []
 
@@ -11,5 +11,5 @@ setup(name='chaluptests',
       author='Krzysztof Chalupka',
       author_email='kjchalup@caltech.edu',
       url='https://github.com/kjchalup/independence_test',
-      packages=['chaluptests'],
+      packages=find_packages(),
       install_requires=required)
