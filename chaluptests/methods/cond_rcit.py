@@ -9,7 +9,7 @@ arXiv preprint arXiv:1202.3775 (2017).
 """
 import rpy2.robjects as R
 from rpy2.robjects.packages import importr
-from independence_test.utils import np2r
+from ..utils import np2r
 importr('RCIT')
 
 def test(x, y, z, **kwargs):

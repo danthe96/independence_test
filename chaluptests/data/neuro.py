@@ -5,7 +5,7 @@ resopnding to natural images, from Gallant's fMRI data. The data
 import numpy as np
 from scipy.io import loadmat
 import h5py
-from independence_test.utils import nan_to_zero
+from ..utils import nan_to_zero
 
 MAX_TIME = 100
 

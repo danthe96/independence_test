@@ -6,7 +6,7 @@ the independence between x and y given z.
 """
 import numpy as np
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
-from independence_test.utils import sample_pnl, sample_gp
+from ..utils import sample_pnl, sample_gp
 
 
 def make_chaos_data(n_samples, type='dep', complexity=.5, **kwargs):

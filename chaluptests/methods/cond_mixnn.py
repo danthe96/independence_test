@@ -11,7 +11,7 @@ import numpy as np
 from scipy.stats import ttest_ind
 import tensorflow as tf
 from neural_networks import nn
-from independence_test.utils import equalize_dimensions
+from ..utils import equalize_dimensions
 from scipy.stats import ttest_1samp
 
 # Define available test statistic functions.

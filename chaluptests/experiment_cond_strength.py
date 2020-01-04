@@ -7,17 +7,17 @@ import joblib
 import numpy as np
 
 # Import all the conditional independence methods we have implemented.
-from independence_test.methods import cond_cci
-from independence_test.methods import cond_hsic
-from independence_test.methods import cond_kcit
-from independence_test.methods import cond_rcit
-from independence_test.methods import cond_kcipt
+from .methods import cond_cci
+from .methods import cond_hsic
+from .methods import cond_kcit
+from .methods import cond_rcit
+from .methods import cond_kcipt
 
 # Import all the datasets we have implemented
-from independence_test.data import make_chaos_data
-from independence_test.data import make_pnl_data
-from independence_test.data import make_discrete_data
-from independence_test.data import make_chain_data
+from .data import make_chaos_data
+from .data import make_pnl_data
+from .data import make_discrete_data
+from .data import make_chain_data
 
 # Import DTIT.
 from fit import fit as fit
