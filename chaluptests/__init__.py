@@ -9,13 +9,13 @@ The last two steps are necessary because kcipt contains two rbf.m
 scripts and Matlab's lack of package management makes it hard to deal with
 this in a more reasonable way.
 """
-KCIPT_PATH = r'~/projects/kcipt'
+KCIPT_PATH = r'~/Projects/kcipt'
 import os
 import tensorflow # Import tensorflow before Matlab to prevent GCC version issue.
 try:
     import matlab.engine
     MATLAB_ENGINE = matlab.engine.start_matlab()
-    MATLAB_ENGINE.addpath('independence_test/methods/', nargout=1)
+    MATLAB_ENGINE.addpath('./methods/', nargout=1)
     MATLAB_ENGINE.addpath(KCIPT_PATH, nargout=1)
     MATLAB_ENGINE.addpath(os.path.join(KCIPT_PATH, 'gpml-matlab/gpml'), nargout=1)
     MATLAB_ENGINE.addpath(os.path.join(KCIPT_PATH, 'kcipt'), nargout=1)
