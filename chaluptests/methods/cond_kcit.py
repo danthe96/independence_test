@@ -12,7 +12,7 @@ try:
     import matlab
 except ImportError:
     raise ImportError('Install the Matlab engine for Python to run CHSIC.')
-from independence_test import MATLAB_ENGINE
+from .. import MATLAB_ENGINE
 
 def test(x, y, z, max_time=60, **kwargs):
     """ Run the RCIT independence test.
@@ -32,8 +32,7 @@ def test(x, y, z, max_time=60, **kwargs):
     try:
         pval = MATLAB_ENGINE.CInd_test_new_withGP(
             matlab.double(x.tolist()), matlab.double(y.tolist()),
-            matlab.double(z.tolist()), 0.05, float(0),
-            nargout=5, async=True)
+            matlab.double(z.tolist()), 0.05, float(0), nargout=5, **{'async': True})
 
         for _ in range(max_time):
             time.sleep(1)

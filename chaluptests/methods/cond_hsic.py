@@ -13,7 +13,7 @@ try:
     import matlab
 except ImportError:
     raise ImportError('Install the Matlab engine for Python to run CHSIC.')
-from independence_test import MATLAB_ENGINE
+from .. import MATLAB_ENGINE
 
 def test(x, y, z, max_time=60, **kwargs):
     """ Run the CHSIC independence test.
@@ -34,7 +34,7 @@ def test(x, y, z, max_time=60, **kwargs):
         pval = MATLAB_ENGINE.hsiccondTestIC(
             matlab.double(x.tolist()), matlab.double(y.tolist()),
             matlab.double(z.tolist()), 0.05, 1000.,
-            nargout=3, async=True)
+            nargout=3, **{'async': True})
 
         for _ in range(max_time):
             time.sleep(1)
