@@ -11,8 +11,8 @@ Proceedings of the 30th Conference on Uncertainty in Artificial Intelligence (UA
 
 """
 
+import io
 import time
-from io import StringIO
 try:
     import matlab
 except ImportError:
@@ -35,7 +35,7 @@ def test(x, y, z, max_time=60, **kwargs):
             return -1. If Matlab fails, return -2.
     """
     try:
-        out = StringIO.StringIO()
+        out = io.StringIO()
         pval = MATLAB_ENGINE.kciptwrapper(
             matlab.double(x.tolist()), matlab.double(y.tolist()),
             matlab.double(z.tolist()), nargout=1, stdout=out, **{'async': True})
