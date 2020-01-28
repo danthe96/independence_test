@@ -1,6 +1,6 @@
 function pval = kciptwrapper(X, Y, Z)
   options.null_estimate = 'bootstrap';
-  options.distance = 'symmetric_regression'; %'rkhs';
+  options.distance = 'rkhs';
   options.bootstrap_samples = 5000;
   boptions.bootstrap_samples = 10;
   
