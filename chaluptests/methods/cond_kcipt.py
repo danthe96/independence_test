@@ -11,8 +11,8 @@ Proceedings of the 30th Conference on Uncertainty in Artificial Intelligence (UA
 
 """
 
-import StringIO
 import time
+from io import StringIO
 try:
     import matlab
 except ImportError:
