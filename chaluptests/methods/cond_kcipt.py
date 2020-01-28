@@ -11,6 +11,7 @@ Proceedings of the 30th Conference on Uncertainty in Artificial Intelligence (UA
 
 """
 
+import StringIO
 import time
 try:
     import matlab
@@ -34,14 +35,17 @@ def test(x, y, z, max_time=60, **kwargs):
             return -1. If Matlab fails, return -2.
     """
     try:
+        out = StringIO.StringIO()
         pval = MATLAB_ENGINE.kciptwrapper(
             matlab.double(x.tolist()), matlab.double(y.tolist()),
-            matlab.double(z.tolist()), nargout=1, **{'async': True})
+            matlab.double(z.tolist()), nargout=1, stdout=out, **{'async': True})
 
         for _ in range(max_time):
             time.sleep(1)
             if pval.done():
-                return pval.result()
+                res = pval.result()
+                print(out.getvalue())
+                return res
 
     except matlab.engine.MatlabExecutionError:
         print('Matlab failure.')
