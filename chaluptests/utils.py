@@ -27,7 +27,9 @@ def np2r(x):
     """
     if 'rpy2' not in sys.modules:
         raise ImportError(("rpy2 is not installed.",
-                " Cannot convert a numpy array to an R vector."))
+                           " Cannot convert a numpy array to an R vector."))
+    if x is None:
+        return R.NULL
     try:
         dim0, dim1 = x.shape
     except IndexError:
